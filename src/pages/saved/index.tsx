@@ -17,6 +17,9 @@ const Saved = () => {
 
   return (
     <>
+    <div>
+
+    </div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Saved Students</h2>
         <button
@@ -25,8 +28,8 @@ const Saved = () => {
         >
           Remove All
         </button>
-      <StudentView data={savedStudents} />
       </div>
+      <StudentView data={savedStudents} />
     </>
   );
 };
