@@ -82,4 +82,4 @@ const StudentView = ({data}:{data: StudentProps[]} ) => {
   );
 };
 
-export default StudentView;
+export default React.memo(StudentView);

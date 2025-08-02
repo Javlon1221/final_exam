@@ -7,13 +7,21 @@ import { useStudents } from "../../api/hooks/useStudent";
 import { useAppDispatch } from "../../redux/hook";
 import { addSaved } from "../../redux/features/saved.slice";
 
+interface StudentProps {
+  id: string;
+  full_name: string;
+  profession: string;
+  address: string;
+  gender: string;
+}
+
 const Detail = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const { getStudents } = useStudents();
   const students = getStudents.data || [];
 
-  const student = students.find((s) => s.id === id);
+  const student = students.find(({s}:{s: StudentProps}) => s.id === id);
 
   if (!student) {
     return (
